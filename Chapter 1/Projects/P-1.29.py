@@ -10,7 +10,7 @@ import sys
 
 
 h = 0
-print(input(">>"))
+print(input(">>>"))
 
 
 def last_two(chars):
