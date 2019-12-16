@@ -11,6 +11,7 @@ import sys
 
 h = 0
 print(input(">>>"))
+print("proving gitio")
 
 
 def last_two(chars):
@@ -44,5 +45,4 @@ def word(chars):
         last_five(chars)
 
 
-word(["c", "a", "t", "d", "o", "g"])
 print(h)
