@@ -7,12 +7,10 @@ import io
 import itertools
 import math
 import sys
-import requests
 
-# print(requests.get("douu"))
+
 h = 0
-
-print(input(">>>"))
+print(input(">>"))
 
 
 def last_two(chars):
