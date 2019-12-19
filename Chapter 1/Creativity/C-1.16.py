@@ -1,11 +1,18 @@
+"""
+C-1.16 
+In our implementation of the scale function (page 25), the body of the loop
+executes the command data[j] = factor. We have discussed that numeric
+types are immutable, and that use of the = operator in this context causes
+the creation of a new instance (not the mutation of an existing instance).
+How is it still possible, then, that our implementation of scale changes the
+actual parameter sent by the caller?
+"""
+
 #It is possible because the parameter is a mutable object,
 # a list with values.
-def prove(inpud):
+def proove(inpud):
     for i in range(len(inpud)):
         inpud[i] += 5
     print(inpud)
 
 
-ab = [5, 6, 7]
-prove(ab)
-print(ab)

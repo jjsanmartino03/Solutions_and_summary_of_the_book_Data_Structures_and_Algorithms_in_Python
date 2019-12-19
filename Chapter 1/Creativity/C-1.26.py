@@ -1,10 +1,16 @@
-def suma(first, secon, expected):
+"""
+C-1.26 Write a short program that takes as input three integers, a, b, and c, from
+the console and determines if they can be used in a correct arithmetic
+formula (in the given order), like “a+b = c,” “a = b−c,” or “a ∗ b = c.”
+"""
+
+def add_operation(first, secon, expected):
     if first + secon == expected:
         return '+'
     else:
         return False
 
-def resta(first, secon, expected):
+def substraction(first, secon, expected):
     if first - secon == expected:
         return '-'
     else:
@@ -30,7 +36,7 @@ def pot(first, secon, expected):
 
 
 def operating(first, second, result, order):
-    operations = [suma, resta, mult, div, pot]
+    operations = [add_operation, substraction, mult, div, pot]
     for i in operations:
         oper = i(first, second, result)
         if oper:
