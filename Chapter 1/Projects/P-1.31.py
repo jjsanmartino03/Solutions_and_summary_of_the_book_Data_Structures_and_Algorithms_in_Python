@@ -9,6 +9,7 @@ to the bills and coins can be based on the monetary system of any current
 or former government. Try to design your program so that it returns as
 few bills and coins as possible.
 """
+
 """I chose the American currency: $1, $2, $5, $10, $20, $50, and $100; 
 1¢, 5¢, 10¢, 25¢, 50¢, and $1"""
 
@@ -32,12 +33,3 @@ while True:
     for i in unity_times:
         if unity_times[i]:
             print(i, unity_times[i], sep=" --> ")
-
-
-"""
-P-1.32 Write a Python program that can simulate a simple calculator, using the
-console as the exclusive input and output device. That is, each input to the
-calculator, be it a number, like 12.34 or 1034, or an operator, like + or =,
-can be done on a separate line. After each such input, you should output
-to the Python console what would be displayed on your calculator.
-"""
