@@ -7,6 +7,7 @@ can be done on a separate line. After each such input, you should output
 to the Python console what would be displayed on your calculator.
 """
 import calc  # This is an inline calculator I had already programmed
+#My version works more like a scientific calculator than a simple calculator
 
 complete = ""
 ans = 0
