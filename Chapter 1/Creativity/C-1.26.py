@@ -4,32 +4,32 @@ the console and determines if they can be used in a correct arithmetic
 formula (in the given order), like “a+b = c,” “a = b−c,” or “a ∗ b = c.”
 """
 
-def add_operation(first, secon, expected):
-    if first + secon == expected:
+def add_operation(first, second, expected):
+    if first + second == expected:
         return '+'
     else:
         return False
 
-def substraction(first, secon, expected):
-    if first - secon == expected:
+def substraction(first, second, expected):
+    if first - second == expected:
         return '-'
     else:
         return False
 
-def mult(first, secon, expected):
-    if first * secon == expected:
+def mult(first, second, expected):
+    if first * second == expected:
         return '*'
     else:
         return False
 
-def div(first, secon, expected):
-    if first / secon == float(expected):
+def div(first, second, expected):
+    if first / second == float(expected):
         return '/'
     else:
         return False
 
-def pot(first, secon, expected):
-    if first ** secon == expected:
+def pot(first, second, expected):
+    if first ** second == expected:
         return '**'
     else:
         return False
@@ -37,8 +37,8 @@ def pot(first, secon, expected):
 
 def operating(first, second, result, order):
     operations = [add_operation, substraction, mult, div, pot]
-    for i in operations:
-        oper = i(first, second, result)
+    for function in operations:
+        oper = function(first, second, result)
         if oper:
             if not order:
                 print(f"a {oper} b = c")
