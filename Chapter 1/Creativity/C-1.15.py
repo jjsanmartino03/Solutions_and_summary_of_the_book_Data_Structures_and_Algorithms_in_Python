@@ -5,13 +5,9 @@ if all the numbers are different from each other (that is, they are distinct).
 """
 
 def all_dif(data):
-    for i in data:
-        data.remove(data[0])
-        for j in data:
-            if i == j:
+    for index, number in data:
+        for j in data[index+1:]:
+            if number == j:
                 return False
     return True
-
-
-print(all_dif([1, 2, 5, 78]))
 
