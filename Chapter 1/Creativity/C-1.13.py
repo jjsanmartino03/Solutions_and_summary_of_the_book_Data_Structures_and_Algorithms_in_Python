@@ -5,10 +5,13 @@ integers, so that the numbers are listed in the opposite order than they
 were before, and compare this method to an equivalent Python function
 for doing the same thing.
 """
-import calc
-#1.return a list of the given list but inversely looped
+
+#function parameters:list of integers
+#for each element in list:
+#   insert it in a new list with index zero
+#return the new list
 
 data = [2, 73, 5, 89]
-#data.reverse()
-print(data[::-1])
+#data.reverse(), this is the equivalent function
+data[::-1] #this is another way of reaching the same objective
 
