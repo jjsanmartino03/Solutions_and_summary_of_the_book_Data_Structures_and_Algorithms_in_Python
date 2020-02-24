@@ -5,7 +5,7 @@ if all the numbers are different from each other (that is, they are distinct).
 """
 
 def all_dif(data):
-    for index, number in data:
+    for index, number in enumerate(data):
         for j in data[index+1:]:
             if number == j:
                 return False
