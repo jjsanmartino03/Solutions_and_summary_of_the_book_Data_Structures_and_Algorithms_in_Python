@@ -46,11 +46,9 @@ def operating(first, second, result, order):
                 print(f"a = b {oper} c")
 
 
-while True:
-    passing = False
-    values = input("Insert values 'a b c':")
-    a, b, c = list(int(i) for i in values.split(" "))
-    operating(a, b, c, 0)
-    operating(b, c, a, 1)
+values = input("Insert values 'a b c':")
+a, b, c = list(int(i) for i in values.split(" "))
+operating(a, b, c, 0)
+operating(b, c, a, 1)
 
 
