@@ -16,6 +16,3 @@ Explain why or why not.
 def scale(data, factor):
     for val in data:
         val *= factor
-    print(data)
-
-scale([2, 3, 6], 5)
