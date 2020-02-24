@@ -12,4 +12,4 @@ def no_punctuation(text):
             text = text.replace(i, "")
     return text
 
-#beware with : and ;
+#beware with : and ;, because this is a lazy approaching to the objective and therefore its working is limited.
