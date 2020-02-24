@@ -5,13 +5,12 @@ until an EOFError is raised, and then outputs those lines in reverse order
 (a user can indicate end of input by typing ctrl-D).
 """
 
-a = []
+lines = []
 while True:
     try:
-        a.append(input())
+        lines.append(input())
     except EOFError:
         break
 
-a.reverse()
-for i in a:
-    print(i)
+print(lines[::-1])
+
