@@ -1,8 +1,8 @@
 """
-R-2.9 
-Implement the __sub__ method for the Vector class of Section 2.3.3, so
-that the expression u−v returns a new vector instance representing the
-difference between two vectors.
+R-2.10
+Implement the __neg__ method for the Vector class of Section 2.3.3, so
+that the expression −v returns a new vector instance whose coordinates
+are all the negated values of the respective coordinates of v.
 """
 
 
@@ -55,10 +55,19 @@ class Vector:
         """Produce string representation of vector."""
         return "<" + str(self.coords)[1:-1] + ">"  # adapt list representation
 
+    def __neg__(self):
+        """
+        Returns a new vector instance whose coordinates 
+        are all the negated values of the respective coordinates of self
+        """
+        new_vector_list = [-i for i in self[:]]
+        new_vector = Vector(len(self))
+        new_vector[:] = new_vector_list
+        return new_vector
+
 
 if __name__ == "__main__":
-    a = Vector(5)
     b = Vector(5)
     b[:] = [3, 5, 6, 9, 1]
-    print(a - b)
+    print(-b)
 
