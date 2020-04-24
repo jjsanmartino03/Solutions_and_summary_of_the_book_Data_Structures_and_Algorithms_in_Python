@@ -23,20 +23,26 @@ for i in original:
     my_function(list(i), new_list)
 """
 
-# txt = "catdog"
+txt = "catdog"
 
 # solution = list(itertools.permutations(txt))
 
 # without itertools
 def recursed_permutations(txt):
+    global abi
     for i in txt:
         if len(txt) > 1:
-            for j in recursed_permutations(txt[:1]):
-                yield txt
-                print(txt)
+            for j in recursed_permutations(txt[1:]):
+                yield txt[0] + j
+                txt = f"{txt[1:]}{txt[0]}"
         else:
             yield txt
-        txt = f"{txt[1:]}{txt[-1]}"
 
 
-list(recursed_permutations(txt))
+abi = []
+for able in recursed_permutations(txt):
+    abi.append(able)
+
+
+print(*abi, sep="\n")
+
