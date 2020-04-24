@@ -6,11 +6,8 @@ until an EOFError is raised, and then outputs those lines in reverse order
 """
 
 lines = []
-while True:
-    try:
+try:
+    while True:
         lines.append(input())
-    except EOFError:
-        break
-
-print(lines[::-1])
-
+except EOFError:
+    print(lines[::-1])
