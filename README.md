@@ -1,4 +1,4 @@
-# Solutions of the book "Data Structures and Algorithms in Python" by Goodrich, Tamassia & Goldwasser
+# Solutions and summary of the book "Data Structures and Algorithms in Python" by Goodrich, Tamassia & Goldwasser
 
 ![Cover of the book](https://github.com/jjsanmartino03/Data-Structures-and-Algorithms-in-Python-solved-exercises/blob/master/book.jpg)
 
