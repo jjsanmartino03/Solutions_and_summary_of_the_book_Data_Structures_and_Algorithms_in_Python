@@ -6,46 +6,46 @@
 
 Common Syntax | Special Method Form
 --------------|--------------------
-a − b | a._\_\_sub\_\_(b); alternatively b._\_\_rsub\_\_(a)
-a + b | a._\_\_add\_\_(b); alternatively b._\_\_radd\_\_(a)
-a b | a._\_\_mul\_\_(b); alternatively b._\_\_rmul\_\_(a)
-a / b | a._\_\_truediv\_\_(b); alternatively b._\_\_rtruediv\_\_(a)
-a // b | a._\_\_floordiv\_\_(b); alternatively b._\_\_rfloordiv\_\_(a)
-a % b | a._\_\_mod\_\_(b); alternatively b._\_\_rmod\_\_(a)
-a b | a._\_\_pow\_\_(b); alternatively b._\_\_rpow\_\_(a)
-a << b | a._\_\_lshift\_\_(b); alternatively b._\_\_rlshift\_\_(a)
-a >> b | a._\_\_rshift\_\_(b); alternatively b._\_\_rrshift\_\_(a)
-a & b | a._\_\_and\_\_(b); alternatively b._\_\_rand\_\_(a)
-a ˆ b | a._\_\_xor\_\_(b); alternatively b._\_\_rxor\_\_(a)
-a \| b | a._\_\_or\_\_(b); alternatively b._\_\_ror\_\_(a)
-a += b | a._\_\_iadd\_\_(b)
-a −= b | a._\_\_isub\_\_(b)
-a = b | a._\_\_imul\_\_(b)
-+a | a._\_\_pos\_\_()
-−a | a._\_\_neg\_\_()
-˜a | a._\_\_invert\_\_()
-abs(a) | a._\_\_abs\_\_()
-a < b | a._\_\_lt\_\_(b)
-a <= b | a._\_\_le\_\_(b)
-a > b | a._\_\_gt\_\_(b)
-a >= b | a._\_\_ge\_\_(b)
-a == b | a._\_\_eq\_\_(b)
-a != b | a._\_\_ne\_\_(b)
-v in a | a._\_\_contains\_\_(v)
-a[k] | a._\_\_getitem\_\_(k)
-a[k] = v | a._\_\_setitem\_\_(k,v)
-del a[k] | a._\_\_delitem\_\_(k)
-a(arg1, arg2, ._._._) | a._\_\_call\_\_(arg1, arg2, ._._._)
-len(a) | a._\_\_len\_\_()
-hash(a) | a._\_\_hash\_\_()
-iter(a) | a._\_\_iter\_\_()
-next(a) | a._\_\_next\_\_()
-bool(a) | a._\_\_bool\_\_()
-float(a) | a._\_\_float\_\_()
-int(a) | a._\_\_int\_\_()
-repr(a) | a._\_\_repr\_\_()
-reversed(a) | a._\_\_reversed\_\_()
-str(a) | a._\_\_str\_\_()
+a − b | a.\_\_sub\_\_(b); alternatively b._\_\_rsub\_\_(a)
+a + b | a.\_\_add\_\_(b); alternatively b._\_\_radd\_\_(a)
+a b | a.\_\_mul\_\_(b); alternatively b._\_\_rmul\_\_(a)
+a / b | a.\_\_truediv\_\_(b); alternatively b.\_\_rtruediv\_\_(a)
+a // b | a.\_\_floordiv\_\_(b); alternatively b.\_\_rfloordiv\_\_(a)
+a % b | a.\_\_mod\_\_(b); alternatively b._\_\_rmod\_\_(a)
+a b | a.\_\_pow\_\_(b); alternatively b._\_\_rpow\_\_(a)
+a << b | a.\_\_lshift\_\_(b); alternatively b._\_\_rlshift\_\_(a)
+a >> b | a.\_\_rshift\_\_(b); alternatively b._\_\_rrshift\_\_(a)
+a & b | a.\_\_and\_\_(b); alternatively b._\_\_rand\_\_(a)
+a ˆ b | a.\_\_xor\_\_(b); alternatively b._\_\_rxor\_\_(a)
+a \| b | a.\_\_or\_\_(b); alternatively b._\_\_ror\_\_(a)
+a += b | a.\_\_iadd\_\_(b)
+a −= b | a.\_\_isub\_\_(b)
+a = b | a.\_\_imul\_\_(b)
++a | a.\_\_pos\_\_()
+−a | a.\_\_neg\_\_()
+˜a | a.\_\_invert\_\_()
+abs(a) | a.\_\_abs\_\_()
+a < b | a.\_\_lt\_\_(b)
+a <= b | a.\_\_le\_\_(b)
+a > b | a.\_\_gt\_\_(b)
+a >= b | a.\_\_ge\_\_(b)
+a == b | a.\_\_eq\_\_(b)
+a != b | a.\_\_ne\_\_(b)
+v in a | a.\_\_contains\_\_(v)
+a[k] | a.\_\_getitem\_\_(k)
+a[k] = v | a.\_\_setitem\_\_(k,v)
+del a[k] | a.\_\_delitem\_\_(k)
+a(arg1, arg2, ...) | a.\_\_call\_\_(arg1, arg2, ...)
+len(a) | a.\_\_len\_\_()
+hash(a) | a.\_\_hash\_\_()
+iter(a) | a.\_\_iter\_\_()
+next(a) | a.\_\_next\_\_()
+bool(a) | a.\_\_bool\_\_()
+float(a) | a.\_\_float\_\_()
+int(a) | a.\_\_int\_\_()
+repr(a) | a.\_\_repr\_\_()
+reversed(a) | a.\_\_reversed\_\_()
+str(a) | a.\_\_str\_\_()
 
 #### Some Non-operator overloads
 - `str(foo) --> foo.___str__()` is called when foo is not a built-in class
@@ -166,3 +166,46 @@ class Range:
 ```
 
 ## 2.4 Inheritance
+- mechanism for a modular and **hierarchical organization**
+- _base class, parent lcass, super class_ / __child class, subclass__ kind of relationship
+- A **subclass** can **override** behabiors of the parent class, or it also can extend the base class by **adding new behaviors**
+- An example is Python's exception classes **hierarchy** 
+
+### 2.4.1 Example: PredatoryCreditCard class
+![PredatoryCreditCard UML](PredatoryCreditCard.png)
+```python
+class PredatoryCreditCard(CreditCard):
+    """An extension to CreditCard that compounds interest and fees."""
+
+    def __init__(self, customer, bank, acnt, limit, apr):
+        """Create a new predatory credit card instance.
+
+        The initial balance is zero.
+
+        customer the name of the customer (e.g., John Bowman )
+        bank the name of the bank (e.g., California Savings )
+        acnt the acount identifier (e.g., 5391 0375 9387 5309 )
+        limit credit limit (measured in dollars)
+        apr annual percentage rate (e.g., 0.0825 for 8.25% APR)"""
+
+        super().__init__(customer, bank, acnt, limit) # call super constructor
+        self._apr = apr
+
+    def charge(self, price):
+        """Charge given price to the card, assuming sufficient credit limit.
+
+        Return True if charge was processed.
+        Return False and assess 5 fee if charge is denied."""
+
+        success = super().charge(price) # call inherited method
+        if not success:
+            self._balance += 5 # assess penalty
+        return success # caller expects return value
+
+    def process_mont(self):    
+        """Assess monthly interest on outstanding balance."""
+        if self._balance > 0:
+        # if positive balance, convert APR to monthly multiplicative factor
+            monthly_factor = pow(1 + self. apr, 1/12)
+            self._balance = monthly_factor
+```
