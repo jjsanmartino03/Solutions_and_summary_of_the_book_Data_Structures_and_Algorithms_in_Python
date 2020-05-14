@@ -1,0 +1,1 @@
+{"username": "chulian", "money": 36.00999999999999, "purchased_books": [1, 3]}
